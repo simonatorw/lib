@@ -41,6 +41,18 @@ function lib(node) {
 	function hide() {
 		node.style.display = 'none';
 	}
+
+	function setAttr(key, val) {
+		node.setAttribute(key, val);
+	}
+
+	function removeAttr(key) {
+		node.removeAttribute(key);
+	}
+
+	function listener(action, func) {
+		node.addEventListener(action, func, false);
+	}
 	
 	return {
 		node,
@@ -50,7 +62,10 @@ function lib(node) {
 		toggleClass,
 		style,
 		show,
-		hide
+		hide,
+		setAttr,
+		removeAttr,
+		listener
 	};
 }
 
